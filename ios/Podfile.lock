@@ -87,6 +87,9 @@ PODS:
     - FacebookLogin
     - FacebookShare
     - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - GoogleAppMeasurement (6.2.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -121,7 +124,12 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - path_provider (0.0.1):
+    - Flutter
   - PromisesObjC (1.2.8)
+  - sqflite (0.0.1):
+    - Flutter
+    - FMDB (~> 2.7.2)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -131,6 +139,8 @@ DEPENDENCIES:
   - firebase_core_web (from `.symlinks/plugins/firebase_core_web/ios`)
   - Flutter (from `Flutter`)
   - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
 
 SPEC REPOS:
   trunk:
@@ -149,6 +159,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseInstallations
     - FirebaseInstanceID
+    - FMDB
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -170,6 +181,10 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_facebook_auth:
     :path: ".symlinks/plugins/flutter_facebook_auth/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
 
 SPEC CHECKSUMS:
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
@@ -193,13 +208,16 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 031d7d0c8e7b5c030bbeb4d2a690550375e83fec
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_facebook_auth: 1e219d4fecba385c98400a100524aa05beeed8c9
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleDataTransport: 47fe3b8e1673e5187dfd615656a3c5034f150d69
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
 
 PODFILE CHECKSUM: c5836fbad901eabe760f03eef0ed6e3109b37283
 
