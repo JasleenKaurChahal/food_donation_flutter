@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "b965e0377301e8a3a4dfea1e93d894f2"
+build_time: [1582667327, 848777000]
+inputs:
+  "/Users/jasleenkaur/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_facebook_auth-0.1.1/ios/Classes/SwiftFlutterFacebookAuthPlugin.swift": [1568325346, 0]
