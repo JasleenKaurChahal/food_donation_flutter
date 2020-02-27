@@ -24,7 +24,7 @@ class DBHelper {
   initDb() async {
     io.Directory documentsDirectory = await getApplicationDocumentsDirectory();
     String path = join(documentsDirectory.path, DB_NAME);
-    var db = await openDatabase(path, version: 1, onCreate: _onCreate);
+    var db = await openDatabase(path, version: 3, onCreate: _onCreate);
     return db;
   }
 
@@ -35,6 +35,7 @@ class DBHelper {
 
   Future<NgoListModel> save(NgoListModel ngoList) async {
     var dbClient = await db;
+    print(' hello $ngoList');
     ngoList.id = await dbClient.insert(TABLE, ngoList.toMap());
     return ngoList;
     /*
@@ -48,6 +49,7 @@ class DBHelper {
   Future<List<NgoListModel>> getNgoList() async {
     var dbClient = await db;
     List<Map> maps = await dbClient.query(TABLE, columns: [ID, NAME, ADDRESS]);
+    print(maps);
     // List<Map> maps = await dbClient.rawQuery("SELECT * FROM $TABLE");
     List<NgoListModel> ngoList = [];
     if (maps.length > 0) {

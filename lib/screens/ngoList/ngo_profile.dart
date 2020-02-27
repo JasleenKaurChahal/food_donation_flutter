@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_donation/providers/user_profile.dart';
+import 'package:flutter_food_donation/components/post.dart';
+import 'package:flutter_food_donation/providers/post.dart';
 import 'package:provider/provider.dart';
+import '../../utils/colors/colors.dart';
 
-import '../../components/app_bar.dart';
+import '../../utils/constants/images.dart';
 
 class NgoProfile extends StatefulWidget {
   final String name, address;
@@ -14,8 +16,38 @@ class NgoProfile extends StatefulWidget {
 }
 
 class NgoProfileState extends State {
+  final PostProvider postProvider = PostProvider();
   final String name, address;
   NgoProfileState(this.name, this.address);
+  Widget _buildCoverImage(BuildContext context, Size screenSize) {
+    return Stack(
+      children: <Widget>[
+        Container(
+          height: screenSize.height / 4,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NGO_COVER,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        // Positioned(
+        //   width: 50,
+        //   right: 5,
+        //   bottom: 0,
+        //   child: RaisedButton(
+        //     color: Theme.of(context).primaryColor,
+        //     child: Icon(
+        //       Icons.photo_camera,
+        //       size: 20,
+        //       color: Colors.white,
+        //     ),
+        //     onPressed: () {},
+        //   ),
+        // )
+      ],
+    );
+  }
 
   Widget _buildProfileImage(BuildContext context) {
     return Center(
@@ -24,7 +56,7 @@ class NgoProfileState extends State {
       height: 140.0,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/user1.jpg'),
+          image: NGO_PROFILE,
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(80.0),
@@ -119,87 +151,68 @@ class NgoProfileState extends State {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        title: Text(name),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.primaryColor,
+                    Colors.limeAccent,
+                  ])),
+        ),
+      ),
       body: CustomScrollView(
         slivers: <Widget>[
+          SliverList(
+              delegate: SliverChildListDelegate([
+            Stack(
+              children: <Widget>[
+                _buildCoverImage(context, screenSize),
+                Column(
+                  children: <Widget>[
+                    (MediaQuery.of(context).orientation == Orientation.portrait)
+                        ? SizedBox(height: 150)
+                        : SizedBox(height: 50),
+                    _buildProfileImage(context),
+                  ],
+                )
+              ],
+            ),
+          ])),
           SliverList(
             delegate: SliverChildListDelegate([
               Container(
                   margin: EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      _buildProfileImage(context),
                       _buildUserName(name),
-                      _buildBio(context, 'Greeting from $name'),
+                      _buildBio(context, 'Greeting from "$name"'),
                       Container(
                           child: _buildPersonalDetails(context, name, address)),
-                      Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            new Container(
-                              height: 40.0,
-                              width: 40.0,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image:
-                                        AssetImage('assets/images/user1.jpg')),
-                              ),
-                            ),
-                            new SizedBox(
-                              width: 10.0,
-                            ),
-                            Expanded(
-                              child: new TextField(
-                                decoration: new InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Add a Post...",
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
                     ],
                   ))
             ]),
           ),
-          Consumer<UserProfileProvider>(
-              builder: (context, userProfileProvider, child) {
-            return SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return Card(
-                    margin: EdgeInsets.all(20),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Image(
-                              height: 50,
-                              width: 50,
-                              image:
-                                  AssetImage('assets/images/cover_image.png'),
-                            ),
-                            Text(userProfileProvider.userProfileModel.userName)
-                          ],
-                        ),
-                        Container(
-                          child: Text(userProfileProvider
-                              .userProfileModel.posts[index]),
-                        )
-                      ],
-                    ),
-                  );
-                },
-                childCount: userProfileProvider.userProfileModel.posts.length,
-              ),
-            );
-          })
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                var postProvider = Provider.of<PostProvider>(context);
+                postProvider.setPostImage(NGO_PROFILE);
+                postProvider.setPostName(name);
+                postProvider.setPostIndex(index);
+                return Post('ngo');
+              },
+              childCount: 5,
+            ),
+          )
         ],
       ),
     );

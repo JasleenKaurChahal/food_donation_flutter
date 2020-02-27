@@ -1,9 +1,11 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/Helper/data.dart';
 import 'package:flutter_food_donation/Helper/db_helper.dart';
 import 'package:flutter_food_donation/Helper/ngo_model.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_profile.dart';
+
+import '../../utils/constants/images.dart';
 
 class AllNgoList extends StatefulWidget {
   @override
@@ -14,14 +16,18 @@ class AllNgoList extends StatefulWidget {
 
 class AllNgoListState extends State<AllNgoList> {
   TextEditingController editingController = TextEditingController();
-  Future<List<NgoListModel>> ngoList;
+  Future<List<NgoListModel>> ngoList, duplicateList;
   var dbHelper;
   String query;
 
   void initState() {
     super.initState();
     dbHelper = DBHelper();
-
+    print('Database and table created');
+    Data.dataList.map((value) {
+      NgoListModel e = NgoListModel(null, value['name'], value['address']);
+      dbHelper.save(e);
+    }).toList();
     refreshList();
   }
 
@@ -74,7 +80,16 @@ class AllNgoListState extends State<AllNgoList> {
           }
 
           if (null == snapshot.data || snapshot.data.length == 0) {
-            return Text("No Data Found");
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircularProgressIndicator(),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                ),
+                Text("No Data Found")
+              ],
+            );
           }
 
           return CircularProgressIndicator();
@@ -93,7 +108,7 @@ class AllNgoListState extends State<AllNgoList> {
             CircleAvatar(
               radius: 50,
               child: Image(
-                image: AssetImage('assets/images/ngo1.jpg'),
+                image: NGO_IMAGE,
               ),
             ),
             Padding(

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/components/post.dart';
+import 'package:flutter_food_donation/providers/post.dart';
 import 'package:flutter_food_donation/providers/user_profile.dart';
 import 'package:provider/provider.dart';
 
+import '../../utils/constants/images.dart';
+
 class UserProfile extends StatelessWidget {
+  final PostProvider postProvider = PostProvider();
   Widget _buildCoverImage(BuildContext context, Size screenSize) {
     return Stack(
       children: <Widget>[
@@ -10,25 +15,25 @@ class UserProfile extends StatelessWidget {
           height: screenSize.height / 4,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/cover_image.png'),
+              image: COVER_IMAGE,
               fit: BoxFit.cover,
             ),
           ),
         ),
-        Positioned(
-          width: 50,
-          right: 5,
-          bottom: 0,
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
-            child: Icon(
-              Icons.photo_camera,
-              size: 20,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-        )
+        // Positioned(
+        //   width: 50,
+        //   right: 5,
+        //   bottom: 0,
+        //   child: RaisedButton(
+        //     color: Theme.of(context).primaryColor,
+        //     child: Icon(
+        //       Icons.photo_camera,
+        //       size: 20,
+        //       color: Colors.white,
+        //     ),
+        //     onPressed: () {},
+        //   ),
+        // )
       ],
     );
   }
@@ -42,7 +47,7 @@ class UserProfile extends StatelessWidget {
             height: 140.0,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/user1.jpg'),
+                image: USER_IMAGE,
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(80.0),
@@ -52,16 +57,16 @@ class UserProfile extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            width: 50,
-            right: 0,
-            bottom: 0,
-            child: FloatingActionButton(
-              backgroundColor: Theme.of(context).primaryColor,
-              child: Icon(Icons.photo_camera),
-              onPressed: () {},
-            ),
-          ),
+          // Positioned(
+          //   width: 50,
+          //   right: 0,
+          //   bottom: 0,
+          //   child: FloatingActionButton(
+          //     backgroundColor: Theme.of(context).primaryColor,
+          //     child: Icon(Icons.photo_camera),
+          //     onPressed: () {},
+          //   ),
+          // ),
         ],
       ),
     );
@@ -204,37 +209,6 @@ class UserProfile extends StatelessWidget {
                                     .userProfileModel.emailAddress,
                                 userProfileProvider
                                     .userProfileModel.phoneNumber)),
-                        Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              new Container(
-                                height: 40.0,
-                                width: 40.0,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(
-                                          'assets/images/user1.jpg')),
-                                ),
-                              ),
-                              new SizedBox(
-                                width: 10.0,
-                              ),
-                              Expanded(
-                                child: new TextField(
-                                  decoration: new InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Add a Post...",
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
                       ],
                     );
                   }),
@@ -246,31 +220,14 @@ class UserProfile extends StatelessWidget {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return Card(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Image(
-                                height: 50,
-                                width: 50,
-                                image:
-                                    AssetImage('assets/images/cover_image.png'),
-                              ),
-                              Text(
-                                  userProfileProvider.userProfileModel.userName)
-                            ],
-                          ),
-                          Container(
-                            child: Text(userProfileProvider
-                                .userProfileModel.posts[index]),
-                          )
-                        ],
-                      ),
-                    );
+                    var postProvider = Provider.of<PostProvider>(context);
+                    postProvider.setPostImage(USER_IMAGE);
+                    postProvider.setPostName(
+                        userProfileProvider.userProfileModel.userName);
+                    postProvider.setPostIndex(index);
+                    return Post('user');
                   },
-                  childCount: userProfileProvider.userProfileModel.posts.length,
+                  childCount: 5,
                 ),
               );
             })

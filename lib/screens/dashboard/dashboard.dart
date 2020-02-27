@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_donation/providers/dashboard.dart';
-import 'package:flutter_food_donation/providers/user_profile.dart';
+import 'package:flutter_food_donation/components/post.dart';
+import 'package:flutter_food_donation/providers/post.dart';
+import 'package:flutter_food_donation/utils/constants/images.dart';
 import 'package:provider/provider.dart';
 import '../../utils/colors/colors.dart';
-import '../../components/app_bar.dart';
 
 class Dashboard extends StatelessWidget {
   final TextStyle _headingStyle = TextStyle(
-      fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black);
-  final TextStyle _infoStyle = TextStyle(
-      fontSize: 18.0, fontWeight: FontWeight.w500, color: Colors.black);
+      fontSize: 22.0, fontWeight: FontWeight.bold, color: Colors.black);
   Widget _buildQuotes(context, width, title, qoutes) {
     return Container(
       width: width,
@@ -26,35 +24,14 @@ class Dashboard extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
             child: Text(
               '"' + qoutes + '"',
-              style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color.primaryColor),
             ),
           )
         ],
       ),
-    );
-  }
-
-  Widget _buildSteps(context, number, content) {
-    return Row(
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(left: 10),
-        ),
-        CircleAvatar(
-          foregroundColor: Colors.black,
-          radius: 20,
-          backgroundColor: Colors.orange[300],
-          child: Text(number.toString()),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-        ),
-        Text(
-          content,
-          maxLines: 20,
-          style: _infoStyle,
-        )
-      ],
     );
   }
 
@@ -80,9 +57,7 @@ class Dashboard extends StatelessWidget {
                                   Colors.black.withOpacity(0.5),
                                   BlendMode.darken),
                               fit: BoxFit.fill,
-                              image: AssetImage(
-                                'assets/images/dashboard.jpg',
-                              ),
+                              image: DASHBOARD_COVER,
                             ),
                           ),
                           height: (MediaQuery.of(context).orientation ==
@@ -96,7 +71,7 @@ class Dashboard extends StatelessWidget {
                               SizedBox(
                                   height: (MediaQuery.of(context).orientation ==
                                           Orientation.portrait)
-                                      ? 100
+                                      ? 90
                                       : 30),
                               Container(
                                 height: 120,
@@ -104,7 +79,7 @@ class Dashboard extends StatelessWidget {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage('assets/images/logo.png'),
+                                    image: APP_LOGO,
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(80.0),
@@ -128,7 +103,6 @@ class Dashboard extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      color: Color.primaryColor,
                       margin: EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -141,46 +115,20 @@ class Dashboard extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.all(5),
-                    ),
-                    Text('HOW IT WORKS — SIMPLE AS 1, 2, 3',
-                        style: _headingStyle),
-                    Padding(
-                      padding: EdgeInsets.all(8),
-                    ),
-                    _buildSteps(context, 1, 'Donate using add Donate button'),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                    ),
-                    _buildSteps(
-                        context,
-                        2,
-                        (MediaQuery.of(context).orientation ==
-                                Orientation.portrait)
-                            ? 'select donation by self or by agent \nthen complete process'
-                            : 'select donation by self or by agent then complete process'),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                    ),
-                    _buildSteps(
-                        context,
-                        3,
-                        (MediaQuery.of(context).orientation ==
-                                Orientation.portrait)
-                            ? 'you will get informed further information \naccording to your selected option'
-                            : 'you will get informed further information according to your selected option'),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                    ),
-                  ],
-                ),
-              ),
             ]),
           ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                var postProvider = Provider.of<PostProvider>(context);
+                postProvider.setPostImage(NGO_PROFILE);
+                postProvider.setPostName('Our Camp');
+                postProvider.setPostIndex(index);
+                return Post('ngo');
+              },
+              childCount: 5,
+            ),
+          )
         ],
       ),
     );

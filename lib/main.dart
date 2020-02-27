@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_donation/providers/agent_profile.dart';
-import 'package:flutter_food_donation/providers/dashboard.dart';
 import 'package:flutter_food_donation/providers/ngo_list.dart';
+import 'package:flutter_food_donation/providers/post.dart';
 import 'package:flutter_food_donation/providers/user_profile.dart';
 import 'package:flutter_food_donation/routes/routes.dart';
 import 'package:flutter_food_donation/screens/dashboard/donation_form.dart';
@@ -23,15 +23,16 @@ class MyApp extends StatelessWidget {
             create: (context) => AgentProfileProvider()),
         ChangeNotifierProvider<UserProfileProvider>(
             create: (context) => UserProfileProvider()),
-        ChangeNotifierProvider<DashboardProvider>(
-            create: (context) => DashboardProvider()),
         ChangeNotifierProvider<NgoListProvider>(
             create: (context) => NgoListProvider()),
+        ChangeNotifierProvider<PostProvider>(
+            create: (context) => PostProvider()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Food Donation App',
           theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
             primarySwatch: Color.primaryColor,
           ),
           // onGenerateRoute: Router.generateRoute,

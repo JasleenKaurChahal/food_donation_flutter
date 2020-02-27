@@ -1,71 +1,43 @@
-{
-  "data": [
-    { "id": 1, "name": "Helper Hands", "address": "Btm 1st stage,Bangalore" },
+class Data {
+  static List<Map> dataList = [
+    {"name": "Helper Hands", "address": "Btm 1st stage,Bangalore"},
+    {"name": "Helper India", "address": "Kormangala, Bangalore, Karnatka"},
+    {"name": "HelpAge India", "address": "Gandhi nagar, Delhi"},
+    {"name": "Food Rights and You", "address": "Sarojni nagar, Delhi"},
     {
-      "id": 2,
-      "name": "Helper India",
-      "address": "Kormangala, Bangalore, Karnatka"
-    },
-    { "id": 3, "name": "HelpAge India", "address": "Gandhi nagar, Delhi" },
-    {
-      "id": 4,
-      "name": "Food Rights and You",
-      "address": "Sarojni nagar, Delhi"
-    },
-    {
-      "id": 5,
       "name": "Lepra Society",
       "address": "Main building,kormangala, Bangalore, Karnatka"
     },
     {
-      "id": 6,
       "name": "Smile Foundation",
       "address": "Main building,kormangala, Bangalore, Karnatka"
     },
     {
-      "id": 7,
       "name": "Smile Society",
       "address": "Main building,kormangala, Bangalore, Karnatka"
     },
     {
-      "id": 8,
       "name": "Rural Health Care Society",
       "address": "Main building,kormangala, Bangalore, Karnatka"
     },
     {
-      "id": 9,
       "name": "Urban Health Care Society",
       "address": "Main building, Main road, Mumbai"
     },
+    {"name": "Goonj", "address": "Main building, Main road, Mumbai"},
+    {"name": "Udaan", "address": "Main building, Main road, Kanpur"},
     {
-      "id": 10,
-      "name": "Goonj",
-      "address": "Main building, Main road, Mumbai"
-    },
-    {
-      "id": 11,
-      "name": "Udaan",
-      "address": "Main building, Main road, Kanpur"
-    },
-    {
-      "id": 12,
       "name": "Udaan Welfare Foundation",
       "address": "Main building, Main road, Kanpur"
     },
+    {"name": "Deepalaya", "address": "Main building, Main road, Kanpur"},
     {
-      "id": 13,
-      "name": "Deepalaya",
-      "address": "Main building, Main road, Kanpur"
-    },
-    {
-      "id": 14,
       "name": "Silence of Joy",
       "address": "Main building, Main road, Bangalore, Karnatka"
     },
     {
-      "id": 15,
       "name": "Deepalaya Foundation",
       "address": "Main building, Main road, Bangalore, Karnatka"
     }
-  ]
+  ];
 }

@@ -7,17 +7,20 @@ class ReusableWidgets {
     return AppBar(
       centerTitle: true,
       automaticallyImplyLeading: true,
-      title: Text(title[index]),
+      title: Text(
+        title[index],
+        style: TextStyle(fontWeight: FontWeight.w600),
+      ),
       flexibleSpace: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25.0),
+            // borderRadius: BorderRadius.circular(25.0),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color.primaryColor,
-                  Colors.limeAccent,
-                ])),
+              Color.primaryColor,
+              Colors.limeAccent,
+            ])),
       ),
     );
   }

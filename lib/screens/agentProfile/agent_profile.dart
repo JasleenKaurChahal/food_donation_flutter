@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/components/post.dart';
 import 'package:flutter_food_donation/providers/agent_profile.dart';
+import 'package:flutter_food_donation/providers/post.dart';
 import 'package:provider/provider.dart';
+
+import '../../utils/constants/images.dart';
 
 class AgentProfile extends StatelessWidget {
   Widget _buildCoverImage(BuildContext context, Size screenSize) {
@@ -10,7 +14,7 @@ class AgentProfile extends StatelessWidget {
           height: screenSize.height / 4,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/cover_image.png'),
+              image: COVER_IMAGE,
               fit: BoxFit.cover,
             ),
           ),
@@ -42,7 +46,7 @@ class AgentProfile extends StatelessWidget {
             height: 140.0,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/agent1.jpg'),
+                image: AGENT_IMAGE,
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(80.0),
@@ -295,37 +299,6 @@ class AgentProfile extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              new Container(
-                                height: 40.0,
-                                width: 40.0,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(
-                                          'assets/images/agent1.jpg')),
-                                ),
-                              ),
-                              new SizedBox(
-                                width: 10.0,
-                              ),
-                              Expanded(
-                                child: new TextField(
-                                  decoration: new InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Add a Post...",
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
                       ],
                     );
                   }),
@@ -337,32 +310,14 @@ class AgentProfile extends StatelessWidget {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return Card(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Image(
-                                height: 50,
-                                width: 50,
-                                image:
-                                    AssetImage('assets/images/cover_image.png'),
-                              ),
-                              Text(agentProfileProvider
-                                  .agentProfileModel.userName)
-                            ],
-                          ),
-                          Container(
-                            child: Text(agentProfileProvider
-                                .agentProfileModel.posts[index]),
-                          )
-                        ],
-                      ),
-                    );
+                    var postProvider = Provider.of<PostProvider>(context);
+                    postProvider.setPostName(
+                        agentProfileProvider.agentProfileModel.userName);
+                    postProvider.setPostIndex(index);
+                    postProvider.setPostImage(AGENT_IMAGE);
+                    return Post('agent');
                   },
-                  childCount:
-                      agentProfileProvider.agentProfileModel.posts.length,
+                  childCount: 5,
                 ),
               );
             })
