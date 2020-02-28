@@ -1,27 +1,75 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+// import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseAuthentication{
+
   static createUserByEmailPassword(
+      {String userName,
+      String userEmail,
+      String userPassword,
+      Function callback,
+      String userPhone,
+      Function showSnackBar}) {
+        try{FirebaseAuth.instance
+                .createUserWithEmailAndPassword(
+                    email: userEmail.trim(), password: userPassword.trim())
+                .then((currentUser)=> {
+                  Firestore.instance
+                  .collection("users")
+                  .document(currentUser.user.uid)
+                  .setData({
+                    "uid":currentUser.user.uid,
+                    "userName":userName,
+                    "userEmail":userEmail,
+                    "userPhone":userPhone
+                  })
+                  .then((result)=>{
+                    callback()
+                  })      
+      }).catchError((err) {
+        showSnackBar('User could not be created due to some error.');
+        print('AN ERROR OCCURED WHILE CREATING USER $err');
+      });}catch(err){
+        print(err);
+      }
+  }
+
+
+  static logInUserByEmailPassword(
       {String userEmail,
       String userPassword,
       Function callback,
       Function showSnackBar}) {
-        print(callback);
+        var user=FirebaseAuth.instance.currentUser();
+        // print(user.uid);
       FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-              email: userEmail.trim(), password: userPassword.trim())
-          .whenComplete(() {
-        print('New User has been created.');
-        callback();
-      }).catchError((err) {
-        showSnackBar('User could not be created due to some error.');
-        print('AN ERROR OCCURED WHILE CREATING USER $err');
-      });
+          .signInWithEmailAndPassword(
+              email: userEmail.trim(), 
+              password: userPassword.trim())
+              .then((currentUser)=>{
+                Firestore.instance
+                .collection("users")
+                .document(currentUser.user.uid)
+                .get()
+                .then((DocumentSnapshot result)=>{
+                  callback()
+                })          
+              }).catchError((err){
+                showSnackBar('User could not be created due to some error.');
+                print('AN ERROR OCCURED WHILE CREATING USER $err');
+              });
   }
 
-  static logOutUsingUserByEmailPassword() async{
-    await FirebaseAuth.instance.signOut();
-  }
+  // static addDonation()
 
+  static logOutUsingUserByEmailPassword({Function callback}) async{
+    try{
+      await FirebaseAuth.instance.signOut().then((result)=>{
+        callback()
+      });  
+    }catch(err){
+      print(err);
+    }
+  }
 }

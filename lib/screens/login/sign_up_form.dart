@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/components/bottom_tab_navigator.dart';
 import './sign_up_icons.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_food_donation/services/firebase_authentication.dart';
+import '../../utils/colors/colors.dart';
 
 class TextEntriesForm extends StatefulWidget {
   @override
@@ -17,59 +19,44 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
       String _pass;
       String _confirmPass;
       bool loading=false;
+      bool _obscure=true;
+      bool _obscure1=true;
+
+      void toggle(){
+        setState(() {
+          _obscure=!_obscure;
+        });
+      }
+      
+      void togglePass(){
+        setState(() {
+          _obscure1=!_obscure1;
+        });
+      }
   
       void _onLoading() {
         setState(() {
           loading = true;
-          new Future.delayed(new Duration(seconds: 3), _login);
+          new Future.delayed(new Duration(seconds: 3), _signUp);
         });
       }
 
-      Future _login() async{
+      Future _signUp() async{
         setState((){
           loading = false;
         });
         signInFunc();
       }
 
-  @override
-  // void initState() {
-  //   super.initState();
-  //   nameNode = FocusNode();
-  //   emailNode = FocusNode();
-  //   phoneNode = FocusNode();
-  //   passNode = FocusNode();
-  //   confirmpassNode = FocusNode();
-  //   nameNode.addListener(() {
-  //     if(nameNode.hasFocus){  
-  //       }  
-  //       else
-  //         validate();
-  //   });
-  // } 
-
-        // @override
-        // void dispose() {
-        //   // Clean up the focus node when the Form is disposed.
-        // nameNode.dispose();
-        // emailNode.dispose();
-        // phoneNode.dispose();
-        // passNode.dispose();
-        // confirmpassNode.dispose();
-        //   super.dispose();
-        // }
-      
-        @override
-        Widget build(BuildContext context) {
-            double width = MediaQuery. of(context). size. width -80.0;
-            double height = MediaQuery. of(context). size. height-200.0;
-
-            TextStyle style = TextStyle(fontFamily: 'Roberto', fontSize: 20.0,color:Colors.black);
+            TextStyle style = TextStyle(fontFamily: 'Roberto', fontSize: 20.0,color:Color.black);
             TextEditingController name=TextEditingController();
             TextEditingController email=TextEditingController();
             TextEditingController phone=TextEditingController();
             TextEditingController pass=TextEditingController();
             TextEditingController confirmPass=TextEditingController();
+
+        @override
+        Widget build(BuildContext context) {
           return ListView(
             children:<Widget>[Form(
             key: _formKey,
@@ -77,32 +64,33 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
             child:Column(
               children: <Widget>[
               SizedBox(height:35.0),
-              Center(child:Text('Sign Up',style:TextStyle(color:Colors.white,fontSize: 40.0))),
+              Center(child:Text('Sign Up',style:TextStyle(color:Color.primaryColor,fontSize: 40.0))),
               SizedBox(height:40.0),
               TextFormField(
-                    //focusNode: nameNode,
+                    focusNode: nameNode,
                     keyboardType: TextInputType.text,
                     controller: name,
-                    cursorColor: Colors.black,
+                    cursorColor: Color.primaryColor,
                     obscureText: false,
                     style: style,
                     decoration: InputDecoration(
-                      errorStyle: TextStyle(fontSize: 12.0,color: Colors.white),
+                      errorStyle: TextStyle(fontSize: 12.0,color: Color.primaryColor),
                       filled: true,
-                      fillColor: Colors.white.withOpacity(0.8),
+                      fillColor: Color.white.withOpacity(0.8),
                         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                         hintText: "Name",
+                        hintStyle:TextStyle(color:Color.primaryColor),
                         prefixIcon: const Icon(
                         Icons.person,
-                        color: Colors.black54,
+                        color: Color.primaryColor,
                       ),
                       focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       border:
                           OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       ),
@@ -116,26 +104,27 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                     focusNode: emailNode,
                     keyboardType: TextInputType.emailAddress,
                     controller: email,
-                    cursorColor: Colors.black,
+                    cursorColor: Color.primaryColor,
                     obscureText: false,
                     style: style,
                     decoration: InputDecoration(
-                        errorStyle: TextStyle(fontSize: 12.0,color: Colors.white),
+                        errorStyle: TextStyle(fontSize: 12.0,color: Color.primaryColor),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Color.white.withOpacity(0.8),
                         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                         hintText: "Email",
+                        hintStyle:TextStyle(color:Color.primaryColor),
                         prefixIcon: const Icon(
                         Icons.email,
-                        color: Colors.black54
+                        color: Color.primaryColor
                       ),
                       focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                         border:
                           OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       ),
@@ -149,26 +138,27 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                     focusNode: phoneNode,
                     keyboardType: TextInputType.number,
                     controller: phone,
-                    cursorColor: Colors.black,
+                    cursorColor: Color.primaryColor,
                     obscureText: false,
                     style: style,
                     decoration: InputDecoration(
-                        errorStyle: TextStyle(fontSize: 12.0,color: Colors.white),
+                        errorStyle: TextStyle(fontSize: 12.0,color: Color.primaryColor),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Color.white.withOpacity(0.8),
                         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                         hintText: "Phone Number",
+                        hintStyle:TextStyle(color:Color.primaryColor),
                         prefixIcon: const Icon(
                         Icons.phone_in_talk,
-                        color: Colors.black54
+                        color: Color.primaryColor
                       ),
                       focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                         border:
                           OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       ),
@@ -181,30 +171,37 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                   TextFormField(
                     focusNode: passNode,
                     controller: pass,
-                    cursorColor: Colors.black,
-                    obscureText: true,
+                    cursorColor: Color.primaryColor,
+                    obscureText: _obscure1,
                     style: style,
                     decoration: InputDecoration(
-                        errorStyle: TextStyle(fontSize: 12.0,color: Colors.white),
+                        errorStyle: TextStyle(fontSize: 12.0,color: Color.primaryColor),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Color.white.withOpacity(0.8),
                         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                         hintText: "Password",
+                        hintStyle:TextStyle(color:Color.primaryColor),
                         prefixIcon: const Icon(
                         Icons.lock_open,
-                        color: Colors.black54
+                        color: Color.primaryColor
                       ),
-                      suffixIcon:const Icon(
-                        Icons.remove_red_eye,
-                        color: Colors.black54
+                      suffixIcon:IconButton(icon:_obscure1?Icon(Icons.visibility_off,
+                        color: Color.primaryColor
+                      ):Icon(
+                        Icons.visibility,
+                        color: Color.primaryColor
+                      ),
+                      onPressed: (){
+                        togglePass();
+                      },
                       ),
                       focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                         border:
                           OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       ),
@@ -217,46 +214,46 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                   TextFormField(
                     focusNode: confirmpassNode,
                     controller: confirmPass,
-                    cursorColor: Colors.black,
-                    obscureText: true,
+                    cursorColor: Color.primaryColor,
+                    obscureText: _obscure,
                     style: style,
                     decoration: InputDecoration(
-                        errorStyle: TextStyle(fontSize: 12.0,color: Colors.white),
+                        errorStyle: TextStyle(fontSize: 12.0,color: Color.primaryColor),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Color.white.withOpacity(0.8),
                         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                         hintText: "Confirm Password",
+                        hintStyle:TextStyle(color:Color.primaryColor),
                         prefixIcon: const Icon(
                         Icons.lock,
-                        color: Colors.black54,
+                        color: Color.primaryColor,
                       ),
-                      suffixIcon:const Icon(
-                        Icons.remove_red_eye,
-                        color: Colors.black54
+                      suffixIcon:IconButton(
+                        icon:_obscure?Icon(Icons.visibility_off,
+                            color: Color.primaryColor
+                          ):Icon(
+                            Icons.visibility,
+                            color: Color.primaryColor
+                          ),
+                        onPressed:(){
+                          toggle();
+                        }
                       ),
                       focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                         border:
                           OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white,width: 2.0),
+                            borderSide: BorderSide(color: Color.primaryColor,width: 2.0),
                             borderRadius: BorderRadius.circular(32.0),
                           ),
                       ),
-                      validator: validateConfirmPassword,
+                      validator: validatePassword,
                       onSaved: (String val) {
                         _confirmPass = val;
                       },
                   ),
-                  GestureDetector(
-                    onTap:()=>forgetPass(context),
-                    child:Container(
-                    margin:EdgeInsets.only(left:180.0),
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                    'Forget Password ?',textAlign:TextAlign.end,style:TextStyle(color:Colors.white,fontSize:16)
-                  ))),
                   SizedBox(height:30.0),
                   SizedBox(
                     height: 40.0,
@@ -264,20 +261,19 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                     child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.green)
+                        side: BorderSide(color: Color.primaryColor)
                     ),
-                    color:Colors.green.withOpacity(0.6),
+                    color:Color.primaryColor.withOpacity(0.6),
                     child:loading?CircularProgressIndicator():Text('Sign Up',style:TextStyle(color:Colors.white,fontSize: 20)),
                     elevation:7.0,
                     onPressed:(){
                       _onLoading();
-                      // signInFunc();
                     },
                     hoverElevation: 0.1,
                   )),
                   SizedBox(height: 30.0),
-                  Divider(color: Colors.white),
-                  Center(child:Text('OR',style:TextStyle(color:Colors.white))),
+                  Divider(color: Color.primaryColor),
+                  Center(child:Text('OR',style:TextStyle(color:Color.primaryColor))),
                   SizedBox(height:20.0),
                   SignUpIcons()
             ],     
@@ -285,17 +281,13 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
         }
       
         String validateName(String value) {
-          RegExp regex = RegExp(r'^[a-zA-Z]+$');
-          if (!regex.hasMatch(value))
-            return 'Enter Valid Name ';
-          else if (value.length < 3)
+          if (value.length < 3)
             return 'Name must be more than 2 charaters';
           else
             return null;
         }
       
         String validateMobile(String value) {
-      // Indian Mobile number are of 10 digit only
           if (value.length != 10)
             return 'Mobile Number must be of 10 digit';
           else
@@ -313,51 +305,34 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
         }
       
         String validatePassword(String value) {
-          RegExp regex = RegExp(r'^[A-Z]+$');
-          if (value.length != 6)
-          return 'Password must contain minimum 8 characters';
-          else if(!regex.hasMatch(value))
-          return 'Password must have one Capital Letter';
+          if (value.length < 6)
+          return 'Password must contain minimum 6 characters';
           else
             return null;
         }
       
-        String validateConfirmPassword(String value) {
-          RegExp regex = RegExp(r'^[A-Z]+$');
-          if (value.length != 6)
-            return 'Password must contain minimum 8 characters';
-          else if(!regex.hasMatch(value))
-            return 'Password must have one Capital Letter';
-          else
-            return null;
+        void callback(){
+          Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => BottomTabNavigator()),
+                );
         }
         
-        void signInFunc(){
-          _formKey.currentState.save();
-          print('here $loading');
-            
-      //       if (_formKey.currentState.validate()) {
-      //         Navigator.push(
-      //           context,
-      //           MaterialPageRoute(builder: (context) => Login()));
-      //   } else {
-      // //    If all data are not valid then start auto validation.
-      //     setState(() {
-      //       _autoValidate = true;
-      //     });
-      //   }
+        void signInFunc(){         
+            if (_formKey.currentState.validate()) {
+              if(_pass==_confirmPass){
+              _formKey.currentState.save();  
+              FirebaseAuthentication.createUserByEmailPassword(userName:_name,userEmail:_email,userPhone:_mobile,userPassword:_pass,callback:callback);
+              } else {
+                setState(() {
+                  _autoValidate = true;
+                });
+              }}
+              else{
+                Scaffold.of(context).showSnackBar(
+                SnackBar(content: Text('Passwords do not match!')));
+              }
           }
-      
-        void forgetPass(BuildContext context){
-          var alert=AlertDialog(
-              title:Text('Forget Password ?'),
-              content:Text('Type \"123456abc\"')
-          );
-          showDialog(
-            context: context,
-            builder: (BuildContext context)=>alert
-          );
-        }
       
         void validate() {
           _formKey.currentState.validate();

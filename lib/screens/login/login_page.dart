@@ -47,10 +47,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Center(
       child:SignUpIcons()
-      // child:Text('Login through facebook')
-    // child:isLogged? null:FacebookSignInButton(
-    // onPressed: _loginWithfacebook
-    //   )
     );        
   }
 }

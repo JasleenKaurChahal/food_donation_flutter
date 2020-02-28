@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
           ),
           // onGenerateRoute: Router.generateRoute,
           //initialRoute: timelineRoute,
-          home: BottomTabNavigator()
+         // home: BottomTabNavigator()
           //home:Timeline()
-          //home:LoginSignUp()
+          home:LoginSignUp()
           // home: Scaffold(
           //     body: Container(
           //       decoration: BoxDecoration(

@@ -4,6 +4,7 @@ import 'package:flutter_food_donation/components/app_bar.dart';
 import 'package:flutter_food_donation/components/contact_us.dart';
 import 'package:flutter_food_donation/screens/dashboard/dashboard.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
+import 'package:flutter_food_donation/screens/login/login_signup.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
 import 'package:flutter_food_donation/screens/userProfile/user_profile.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
@@ -26,6 +27,14 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     History(),
     UserProfile()
   ];
+
+  void callBack(){
+    Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) => LoginSignUp()),
+    (_)=>false
+    );
+  }
 
   final List<Widget> _drawerTabs=[
     AboutUs(),
@@ -148,7 +157,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               leading: Icon(Icons.flip_to_back, color: Color.black),
               title: Text('Log out', style: TextStyle(color: Color.black)),
               onTap: () {
-                FirebaseAuthentication.logOutUsingUserByEmailPassword();
+                FirebaseAuthentication.logOutUsingUserByEmailPassword(callback:callBack);
               }),
         ],
       )),

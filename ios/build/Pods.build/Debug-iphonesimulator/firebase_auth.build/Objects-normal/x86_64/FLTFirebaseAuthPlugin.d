@@ -63,6 +63,27 @@ dependencies: \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAdditionalUserInfo.h \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRActionCodeSettings.h \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Target\ Support\ Files/FirebaseAuth/FirebaseAuth-umbrella.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FirebaseFirestore.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/module.modulemap \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRWriteBatch.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRTransaction.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRTimestamp.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRSnapshotMetadata.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRQuerySnapshot.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRGeoPoint.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestoreSettings.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestoreErrors.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestore.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFieldValue.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFieldPath.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRDocumentSnapshot.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRDocumentReference.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRDocumentChange.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRListenerRegistration.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestoreSource.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRQuery.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRCollectionReference.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Target\ Support\ Files/FirebaseFirestore/FirebaseFirestore-umbrella.h \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseInstanceID/Firebase/InstanceID/Public/FirebaseInstanceID.h \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/build/Pods.build/Debug-iphonesimulator/FirebaseInstanceID.build/module.modulemap \
   /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseInstanceID/Firebase/InstanceID/Public/FIRInstanceID.h \

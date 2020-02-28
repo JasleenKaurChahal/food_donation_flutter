@@ -1,0 +1,11 @@
+dependencies: \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/crypto/bn_extra/bn_asn1.c \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Target\ Support\ Files/BoringSSL-GRPC/BoringSSL-GRPC-prefix.pch \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/bn.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/base.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/is_boringssl.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/opensslconf.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/thread.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/bytestring.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/span.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/BoringSSL-GRPC/include/openssl/err.h

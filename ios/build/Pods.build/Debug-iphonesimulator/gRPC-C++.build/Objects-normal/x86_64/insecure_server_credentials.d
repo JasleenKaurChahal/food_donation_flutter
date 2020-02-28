@@ -1,0 +1,42 @@
+dependencies: \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/src/cpp/server/insecure_server_credentials.cc \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Target\ Support\ Files/gRPC-C++/gRPC-C++-prefix.pch \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/security/server_credentials.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/security/server_credentials_impl.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/grpc_security_constants.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/security/auth_metadata_processor.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/security/auth_metadata_processor_impl.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/security/auth_context.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/impl/codegen/security/auth_context.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/impl/codegen/config.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/impl/codegen/string_ref.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/support/status.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/impl/codegen/status.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/status.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/impl/codegen/status_code_enum.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/support/string_ref.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpcpp/support/config.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/grpc.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/support/port_platform.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/port_platform.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/status.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/byte_buffer.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/byte_buffer.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/grpc_types.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/compression_types.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/gpr_types.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/slice.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/gpr_slice.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/slice_buffer.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/slice.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/support/sync.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/sync.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/sync_generic.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/atm.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/atm_gcc_atomic.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/sync_posix.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/connectivity_state.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/propagation_bits.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/support/time.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/support/log.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/gRPC-C++/include/grpc/impl/codegen/log.h

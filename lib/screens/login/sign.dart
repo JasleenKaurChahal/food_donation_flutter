@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './sign_up_form.dart';
+import '../../utils/constants/images.dart';
 
 class Sign extends StatefulWidget {
   @override
@@ -19,8 +20,8 @@ class SignedUp extends State<Sign>{
           decoration: BoxDecoration(
           color: Colors.transparent.withOpacity(1),
           image: DecorationImage(
-            image: NetworkImage('https://i.pinimg.com/474x/e8/56/87/e85687f71c27c584818f4210040f0f9c.jpg'),
-            fit: BoxFit.fill,
+            image:BACKGROUND,
+            fit: BoxFit.cover,
           ),
         ),
           padding:EdgeInsets.all(30.0),
