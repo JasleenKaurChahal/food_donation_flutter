@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_donation/components/app_bar.dart';
+import 'package:flutter_food_donation/components/logout_modal.dart';
 import 'package:flutter_food_donation/screens/dashboard/dashboard.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
@@ -146,7 +147,65 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               leading: Icon(Icons.flip_to_back, color: Color.black),
               title: Text('Log out', style: TextStyle(color: Color.black)),
               onTap: () {
-                FirebaseAuthentication.logOutUsingUserByEmailPassword();
+                showDialog(
+                    useRootNavigator: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Container(
+                          height: 250,
+                          width: 100,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image(
+                                  image: NEED_FOOD,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 20),
+                              ),
+                              Text(
+                                'Are you sure you want to \nlogout?',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                            padding: EdgeInsets.all(10),
+                            color: Color.primaryColor,
+                            child: Text('Yes',
+                                style: (TextStyle(
+                                    fontSize: 20, color: Color.white))),
+                            onPressed: () {
+                              FirebaseAuthentication
+                                  .logOutUsingUserByEmailPassword();
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 60),
+                          ),
+                          FlatButton(
+                            padding: EdgeInsets.all(10),
+                            color: Color.primaryColor,
+                            child: Text('No',
+                                style: (TextStyle(
+                                    fontSize: 20, color: Color.white))),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.pop(context);
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 20),
+                          ),
+                        ],
+                      );
+                    });
+                // FirebaseAuthentication.logOutUsingUserByEmailPassword();
                 // Navigator.pushReplacement(
                 //   context,
                 //   MaterialPageRoute(builder: (context) => DonationForm()),

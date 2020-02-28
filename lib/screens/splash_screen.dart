@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/Helper/data.dart';
+import 'package:flutter_food_donation/Helper/db_helper.dart';
 import 'dart:async';
+import 'package:flutter_food_donation/Helper/ngo_model.dart';
 import 'package:flutter_food_donation/components/bottom_tab_navigator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_food_donation/utils/constants/images.dart';
@@ -32,7 +35,14 @@ class SplashScreenState extends State<SplashScreen>
     setState(() {
       _visible = !_visible;
     });
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 5), () {
+      var dbHelper;
+      dbHelper = DBHelper();
+      print('Database and table created');
+      Data.dataList.map((value) {
+        NgoListModel e = NgoListModel(null, value['name'], value['address']);
+        dbHelper.save(e);
+      }).toList();
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => BottomTabNavigator()),
@@ -64,32 +74,3 @@ class SplashScreenState extends State<SplashScreen>
     );
   }
 }
-// class SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     Timer(Duration(seconds: 5), () {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (context) => BottomTabNavigator()),
-//       );
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         body: Stack(
-//           fit: StackFit.expand,
-//           children: <Widget>[
-//             Container(
-//               color: Colors.deepOrange[400],
-//             ),
-
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

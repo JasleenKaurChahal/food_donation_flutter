@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_food_donation/Helper/data.dart';
+// import 'package:flutter_food_donation/Helper/data.dart';
 import 'package:flutter_food_donation/Helper/db_helper.dart';
 import 'package:flutter_food_donation/Helper/ngo_model.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_profile.dart';
@@ -23,11 +23,6 @@ class AllNgoListState extends State<AllNgoList> {
   void initState() {
     super.initState();
     dbHelper = DBHelper();
-    print('Database and table created');
-    Data.dataList.map((value) {
-      NgoListModel e = NgoListModel(null, value['name'], value['address']);
-      dbHelper.save(e);
-    }).toList();
     refreshList();
   }
 
@@ -105,12 +100,6 @@ class AllNgoListState extends State<AllNgoList> {
         margin: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            CircleAvatar(
-              radius: 50,
-              child: Image(
-                image: NGO_IMAGE,
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
