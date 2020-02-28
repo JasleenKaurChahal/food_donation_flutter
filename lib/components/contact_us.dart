@@ -5,7 +5,48 @@ import 'package:flutter_food_donation/utils/constants/images.dart';
 import '../utils/colors/colors.dart';
 
 class ContactUs extends StatelessWidget {
-  Widget _buildContactUs(BuildContext context) {
+  Widget _buildDetailsItem(BuildContext context, String label, String info) {
+    TextStyle _labelStyle = TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: 16.0,
+    );
+    TextStyle _infoStyle = TextStyle(
+      fontFamily: 'Spectral',
+      fontWeight: FontWeight.w500,
+      fontSize: 15.0,
+    );
+    return Row(
+      children: <Widget>[
+        Text(
+          label,
+          style: _labelStyle,
+        ),
+        Text(
+          info,
+          style: _infoStyle,
+        )
+      ],
+    );
+  }
+
+  Widget _buildPersonalDetails(BuildContext context, String name, String place,
+      String email, String phoneNumber) {
+    return Container(
+      margin: EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          _buildDetailsItem(context, 'Name: ', name),
+          _buildDetailsItem(context, 'Lives in: ', place),
+          _buildDetailsItem(context, 'Email Address : ', email),
+          _buildDetailsItem(context, 'Contact Number: ', phoneNumber),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildContactUs(BuildContext context, String title, String name,
+      String place, String email, String phone, AssetImage image) {
     return Container(
       margin: (MediaQuery.of(context).orientation == Orientation.portrait)
           ? EdgeInsets.all(10.0)
@@ -17,49 +58,27 @@ class ContactUs extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.fromLTRB(10, 10, 0, 5),
-                height: 70.0,
-                width: 70.0,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Color.primaryColor, width: 2.0),
-                    shape: BoxShape.circle,
-                    image:
-                        DecorationImage(image: AGENT_IMAGE, fit: BoxFit.fill)),
-              ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text(
-                        'John',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 18),
-                      )),
-                  Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text('Banglore',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w300, fontSize: 16))),
+                    margin: EdgeInsets.fromLTRB(10, 10, 0, 5),
+                    height: 70.0,
+                    width: 70.0,
+                    decoration: BoxDecoration(
+                        border:
+                            Border.all(color: Color.primaryColor, width: 2.0),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(image: image, fit: BoxFit.fill)),
+                  ),
+                  Text(
+                    title,
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  ),
                 ],
-              )
+              ),
+              _buildPersonalDetails(context, name, place, email, phone),
             ],
           ),
-          Row(
-            children: <Widget>[
-              Text(
-                'CEO',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-              ),
-              Column(
-                children: <Widget>[
-                  Text('Phone: 864527108', style: TextStyle(fontSize: 16)),
-                  Text('Email: John@food.com', style: TextStyle(fontSize: 16))
-                ],
-              )
-            ],
-          )
         ],
       ),
     );
@@ -91,8 +110,12 @@ class ContactUs extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    _buildContactUs(context),
-                    _buildContactUs(context)
+                    _buildContactUs(context, 'CEO', 'Mack', 'Bangalore',
+                        'Mack@gmail.com', '91-894609', AGENT_IMAGE),
+                    _buildContactUs(context, 'Manager', 'John', 'Bangalore',
+                        'John@gmail.com', '91-774609', USER_IMAGE),
+                    _buildContactUs(context, 'Founder', 'Jony', 'Mumbai',
+                        'Jony@gmail.com', '91-994609', NGO_AGENT),
                   ],
                 ),
               ),
