@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/components/about_us.dart';
 import 'package:flutter_food_donation/components/app_bar.dart';
-import 'package:flutter_food_donation/components/logout_modal.dart';
+import 'package:flutter_food_donation/components/contact_us.dart';
 import 'package:flutter_food_donation/screens/dashboard/dashboard.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
+import 'package:flutter_food_donation/screens/login/login_signup.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
 import 'package:flutter_food_donation/screens/userProfile/user_profile.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
 import 'package:flutter_food_donation/utils/constants/images.dart';
 import '../utils/colors/colors.dart';
+import '../screens/history/history.dart';
 
 class BottomTabNavigator extends StatefulWidget {
   @override
@@ -17,22 +20,21 @@ class BottomTabNavigator extends StatefulWidget {
 class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   int _selectedIndex = 0;
   int _currentIndex = 0;
-  var col = [
-    Colors.green,
-    Colors.red,
-    Colors.black,
-    Colors.pink,
-    Colors.blueAccent,
-    Colors.purple
-  ];
 
   final List<Widget> _children = [
     Dashboard(),
     AllNgoList(),
     Timeline(),
-    Center(child: Text('history')),
+    History(),
     UserProfile()
   ];
+
+  void callBack() {
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => LoginSignUp()), (_) => false);
+  }
+
+  final List<Widget> _drawerTabs = [AboutUs(), ContactUs()];
 
   void onTabTapped(int index) {
     setState(() {
@@ -44,7 +46,8 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     setState(() {
       _selectedIndex = index;
     });
-    Navigator.pop(context);
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => _drawerTabs[_selectedIndex]));
   }
 
   @override
@@ -73,7 +76,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                         _currentIndex == 0 ? Colors.grey : Color.primaryColor)),
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.mail, color: Colors.grey),
+            activeIcon: Icon(Icons.place, color: Colors.grey),
             icon: new Icon(Icons.place, color: Color.primaryColor),
             title: new Text('Ngo',
                 style: TextStyle(
@@ -81,7 +84,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                         _currentIndex == 1 ? Colors.grey : Color.primaryColor)),
           ),
           BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person, color: Colors.grey),
+              activeIcon: Icon(Icons.add, color: Colors.grey),
               icon: Icon(Icons.add, color: Color.primaryColor),
               title: Text('Add',
                   style: TextStyle(
@@ -89,7 +92,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                           ? Colors.grey
                           : Color.primaryColor))),
           BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person, color: Colors.grey),
+              activeIcon: Icon(Icons.history, color: Colors.grey),
               icon: Icon(Icons.history, color: Color.primaryColor),
               title: Text('History',
                   style: TextStyle(
@@ -133,9 +136,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               ))),
           ListTile(
             leading: Icon(Icons.info_outline, color: Color.black),
-            //subtitle: Text('Select to change color'),
             title: Text('About us', style: TextStyle(color: Color.black)),
-            //trailing: Icon(Icons.add,color:Colors.green),
             onTap: () => _onSelectItem(0),
           ),
           ListTile(
@@ -181,8 +182,10 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                                 style: (TextStyle(
                                     fontSize: 20, color: Color.white))),
                             onPressed: () {
+                              Navigator.pop(context);
                               FirebaseAuthentication
-                                  .logOutUsingUserByEmailPassword();
+                                  .logOutUsingUserByEmailPassword(
+                                      callback: callBack);
                             },
                           ),
                           Padding(

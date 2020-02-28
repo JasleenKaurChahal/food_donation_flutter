@@ -39,8 +39,7 @@ class MyApp extends StatelessWidget {
           // onGenerateRoute: Router.generateRoute,
           //initialRoute: timelineRoute,
           home: SplashScreen()
-          //home:Timeline()
-          //home:LoginSignUp()
+          // home:LoginSignUp()
           // home: Scaffold(
           //     body: Container(
           //       decoration: BoxDecoration(

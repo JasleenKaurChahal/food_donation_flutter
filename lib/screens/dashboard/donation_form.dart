@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_donation/components/app_bar.dart';
 import 'package:flutter_food_donation/components/drop_down_list.dart';
+import 'package:flutter_food_donation/screens/dashboard/thanku_note.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
 import 'package:flutter_food_donation/utils/constants/images.dart';
 import '../../utils/colors/colors.dart';
@@ -92,6 +93,11 @@ class _DonationFormState extends State<DonationForm> {
                               if (_formKey.currentState.validate()) {
                                 Scaffold.of(context).showSnackBar(
                                     SnackBar(content: Text('Processing Data')));
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThankuNote()),
+                                );
                               }
                             },
                             child: Text('Donate'),

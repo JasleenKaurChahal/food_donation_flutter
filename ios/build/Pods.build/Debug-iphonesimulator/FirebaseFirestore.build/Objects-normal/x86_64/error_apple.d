@@ -1,0 +1,25 @@
+dependencies: \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/error_apple.mm \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/error_apple.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/include/firebase/firestore/firestore_errors.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/status_fwd.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/strings/string_view.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/config.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/policy_checks.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/internal/throw_delegate.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/macros.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/optimization.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/port.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/base/attributes.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/hard_assert.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/exception.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/string_format.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/objc/objc_type_traits.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/string_apple.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/type_traits.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/meta/type_traits.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/strings/str_cat.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/strings/numbers.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/numeric/int128.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/build/ios/Debug-iphonesimulator/abseil/absl.framework/Headers/numeric/int128_have_intrinsic.inc \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/status.h

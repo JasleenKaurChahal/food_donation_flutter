@@ -3,9 +3,10 @@ import 'package:flutter_food_donation/Helper/data.dart';
 import 'package:flutter_food_donation/Helper/db_helper.dart';
 import 'dart:async';
 import 'package:flutter_food_donation/Helper/ngo_model.dart';
-import 'package:flutter_food_donation/components/bottom_tab_navigator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_food_donation/utils/constants/images.dart';
+
+import 'login/login_signup.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -45,7 +46,7 @@ class SplashScreenState extends State<SplashScreen>
       }).toList();
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => BottomTabNavigator()),
+        MaterialPageRoute(builder: (context) => LoginSignUp()),
       );
     });
   }

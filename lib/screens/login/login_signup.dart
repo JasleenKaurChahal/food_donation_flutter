@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './login_page_form.dart';
 import './sign.dart';
+import '../../utils/colors/colors.dart';
 
 class LoginSignUp extends StatefulWidget {
   @override
@@ -13,18 +14,18 @@ class _LoginSignUpState extends State<LoginSignUp> {
     return DefaultTabController(
       length: 2,
       child:Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.white,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(30.0),
             child: Container(
-              decoration:BoxDecoration(
-                shape: BoxShape.rectangle,
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2.0,
-                  ),
-                borderRadius: BorderRadius.circular(12),
-                ),
+              // decoration:BoxDecoration(
+              //   shape: BoxShape.rectangle,
+              //   border: Border.all(
+              //     color: Color.white,
+              //     // width: 2.0,
+              //     ),
+              //   borderRadius: BorderRadius.circular(12),
+              //   ),
               child:SafeArea(
                 child: Column(
                   children: <Widget>[
@@ -32,9 +33,9 @@ class _LoginSignUpState extends State<LoginSignUp> {
                     TabBar(
                       tabs: [
                         Center(
-                          child:Text("LogIn",style: TextStyle(color:Colors.white),)),
+                          child:Text("LogIn",style: TextStyle(color:Color.primaryColor),)),
                         Center(
-                          child:Text("SignUp",style: TextStyle(color:Colors.white),)),
+                          child:Text("SignUp",style: TextStyle(color:Color.primaryColor),)),
                       ],
                     ),
                   ],

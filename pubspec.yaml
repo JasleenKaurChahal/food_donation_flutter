@@ -20,6 +20,8 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^4.0.1
+  carousel_pro: ^1.0.0
+  cloud_firestore: ^0.13.4
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -69,6 +71,7 @@ flutter:
     - assets/images/image4.jpg
     - assets/images/image5.jpg
     - assets/images/splash.jpg
+    - assets/images/background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
