@@ -1,0 +1,43 @@
+dependencies: \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProvider/Phone/FIRPhoneAuthProvider.m \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/build/Pods.build/Debug-iphoneos/FirebaseAuth.build/module.modulemap \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthProvider.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/build/Pods.build/Debug-iphoneos/FirebaseCore.build/module.modulemap \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Private/FIRLogger.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FIROptions.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FIRLoggerLevel.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FIRConfiguration.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FIRApp.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-umbrella.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProvider/Phone/FIRPhoneAuthCredential_Internal.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthCredential.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthCredential.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/SystemService/FIRAuthAPNSToken.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthAPNSTokenType.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/SystemService/FIRAuthAPNSTokenManager.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/SystemService/FIRAuthAppCredential.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/SystemService/FIRAuthAppCredentialManager.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Storage/FIRAuthKeychainServices.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuthGlobalWorkQueue.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuth_Internal.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuth.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthErrors.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/Headers/Public/FirebaseAuthInterop/FIRAuthInterop.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Utilities/FIRAuthURLPresenter.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/SystemService/FIRAuthNotificationManager.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Utilities/FIRAuthErrorUtils.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/FIRAuthBackend.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthSettings.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Utilities/FIRAuthWebUtils.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FirebaseAuthVersion.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRGetProjectConfigRequest.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/FIRIdentityToolkitRequest.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/FIRAuthRequestConfiguration.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/FIRAuthRPCRequest.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRGetProjectConfigResponse.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/FIRAuthRPCResponse.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRSendVerificationCodeRequest.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRSendVerificationCodeResponse.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRVerifyClientRequest.h \
+  /Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRVerifyClientResponse.h

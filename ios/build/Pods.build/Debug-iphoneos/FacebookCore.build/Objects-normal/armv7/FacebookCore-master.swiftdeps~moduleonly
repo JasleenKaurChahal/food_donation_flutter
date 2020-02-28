@@ -1,0 +1,10 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "456458aba1c2526aaeccd6eb8ae78a1c"
+build_time: [1582806507, 145678000]
+inputs:
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/AccessToken.swift": [1582806396, 625451044]
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/Dictionary+KeyValueMap.swift": [1582806396, 625014996]
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/FBProfilePictureView.swift": [1582806396, 625802103]
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/FBSDKCoreKit+Typealiases.swift": [1582806396, 624672649]
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/Permission.swift": [1582806396, 624144768]
+  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/Settings.swift": [1582806396, 626158201]
