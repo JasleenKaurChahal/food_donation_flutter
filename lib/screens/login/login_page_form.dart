@@ -218,12 +218,12 @@ class _LoginFormState extends State<LoginForm> {
             if (_formKey.currentState.validate()) {
             _formKey.currentState.save();
           FirebaseAuthentication.logInUserByEmailPassword(userEmail:_email,userPassword:_pass,callback:callBack);
-        } else {
-          setState(() {
-            _autoValidate = true;
-          });
-        }
+          } else {
+            setState(() {
+              _autoValidate = true;
+            });
           }
+        }
       
         void forgetPass(BuildContext context){
           var alert=AlertDialog(
