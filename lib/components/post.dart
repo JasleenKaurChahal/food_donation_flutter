@@ -36,13 +36,11 @@ class Post extends StatelessWidget {
                                 image: postProvider.image, fit: BoxFit.fill)),
                       );
                     }),
-                    // Padding(
-                    //   padding: EdgeInsets.only(left: 15),
-                    // ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                            margin: EdgeInsets.only(left: 15),
+                            margin: EdgeInsets.only(left: 10),
                             child: Consumer<PostProvider>(
                                 builder: (context, postProvider, child) {
                               return Text(
@@ -52,6 +50,7 @@ class Post extends StatelessWidget {
                               );
                             })),
                         Container(
+                            margin: EdgeInsets.only(left: 10),
                             child: Text('Banglore',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w300,
