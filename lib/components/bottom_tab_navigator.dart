@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/components/about_us.dart';
 import 'package:flutter_food_donation/components/app_bar.dart';
 import 'package:flutter_food_donation/screens/dashboard/dashboard.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
 import 'package:flutter_food_donation/screens/userProfile/user_profile.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
 import '../utils/colors/colors.dart';
+import '../screens/history/history.dart';
 
 class BottomTabNavigator extends StatefulWidget {
   @override
@@ -15,21 +17,18 @@ class BottomTabNavigator extends StatefulWidget {
 class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   int _selectedIndex = 0;
   int _currentIndex = 0;
-  var col = [
-    Colors.green,
-    Colors.red,
-    Colors.black,
-    Colors.pink,
-    Colors.blueAccent,
-    Colors.purple
-  ];
-
+  
   final List<Widget> _children = [
     Dashboard(),
     AllNgoList(),
     Timeline(),
-    Center(child: Text('history')),
+    History(),
     UserProfile()
+  ];
+
+  final List<Widget> _drawerTabs=[
+    AboutUs(),
+    AboutUs()
   ];
 
   void onTabTapped(int index) {
@@ -41,8 +40,11 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   _onSelectItem(int index) {
     setState(() {
       _selectedIndex = index;
-    });
-    Navigator.pop(context);
+    });  
+    Navigator.push(
+      context, 
+      MaterialPageRoute(builder: (context) => _drawerTabs[_selectedIndex])
+    );
   }
 
   @override
@@ -133,9 +135,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               ))),
           ListTile(
             leading: Icon(Icons.info_outline, color: Color.black),
-            //subtitle: Text('Select to change color'),
             title: Text('About us', style: TextStyle(color: Color.black)),
-            //trailing: Icon(Icons.add,color:Colors.green),
             onTap: () => _onSelectItem(0),
           ),
           ListTile(
@@ -148,10 +148,6 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               title: Text('Log out', style: TextStyle(color: Color.black)),
               onTap: () {
                 FirebaseAuthentication.logOutUsingUserByEmailPassword();
-                // Navigator.pushReplacement(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => DonationForm()),
-                // );
               }),
         ],
       )),

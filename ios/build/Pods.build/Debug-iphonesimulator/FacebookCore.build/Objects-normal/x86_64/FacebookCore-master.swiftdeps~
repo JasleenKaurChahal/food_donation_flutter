@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
-options: "a4eeecdef239c41dbe706f8fbd1165da"
-build_time: [1582563627, 301722000]
+options: "d401744b64033ddca1fbe8dbe5da5db4"
+build_time: [1582563793, 514917000]
 inputs:
   "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/AccessToken.swift": [1582538674, 450869223]
   "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookCore/Sources/Core/Dictionary+KeyValueMap.swift": [1582538674, 450668927]
