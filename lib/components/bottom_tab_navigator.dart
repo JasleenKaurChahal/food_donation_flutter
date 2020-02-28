@@ -5,6 +5,7 @@ import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
 import 'package:flutter_food_donation/screens/userProfile/user_profile.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
+import 'package:flutter_food_donation/utils/constants/images.dart';
 import '../utils/colors/colors.dart';
 
 class BottomTabNavigator extends StatefulWidget {
@@ -119,10 +120,8 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                       width: 100.0,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                  "https://png.pngtree.com/png-clipart/20190629/original/pngtree-vector-add-user-icon-png-image_4101420.jpg")))),
+                          image: DecorationImage(
+                              fit: BoxFit.fill, image: USER_IMAGE))),
                   SizedBox(width: 15.0),
                   Text('Welcome User!\nPlan your vacation',
                       textAlign: TextAlign.center,
