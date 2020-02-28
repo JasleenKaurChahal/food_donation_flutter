@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseAuthentication{
-
   static createUserByEmailPassword(
       {String userName,
       String userEmail,
@@ -41,8 +40,6 @@ class FirebaseAuthentication{
       String userPassword,
       Function callback,
       Function showSnackBar}) {
-        var user=FirebaseAuth.instance.currentUser();
-        // print(user.uid);
       FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: userEmail.trim(), 
@@ -61,7 +58,34 @@ class FirebaseAuthentication{
               });
   }
 
-  // static addDonation()
+  static addDonations({String ngoName,String address,String date,String time,String foodItem,String quantity,Function callback}){
+    try{
+      var user=FirebaseAuth.instance.currentUser();
+      FirebaseAuth.instance
+      .currentUser()
+      .then((currentUser)=> {
+      Firestore.instance
+      .collection("donations")
+      .document()
+      .setData({
+        // "donationId":Document(),
+        "userId":currentUser.uid,
+        "ngoName":ngoName,
+        "address":address,
+        "date":date,
+        "time":time,
+        "foodItem":foodItem,
+        "quantity":quantity
+      })
+      .then((result)=>{
+        //callback()
+      })});
+
+    }catch(err){
+      print(err);
+    }
+
+  }
 
   static logOutUsingUserByEmailPassword({Function callback}) async{
     try{
