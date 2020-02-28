@@ -105,12 +105,6 @@ class AllNgoListState extends State<AllNgoList> {
         margin: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            CircleAvatar(
-              radius: 50,
-              child: Image(
-                image: NGO_IMAGE,
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(

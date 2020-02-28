@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_donation/components/about_us.dart';
 import 'package:flutter_food_donation/components/app_bar.dart';
+import 'package:flutter_food_donation/components/contact_us.dart';
 import 'package:flutter_food_donation/screens/dashboard/dashboard.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
@@ -28,7 +29,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
 
   final List<Widget> _drawerTabs=[
     AboutUs(),
-    AboutUs()
+    ContactUs()
   ];
 
   void onTabTapped(int index) {
@@ -73,7 +74,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                         _currentIndex == 0 ? Colors.grey : Color.primaryColor)),
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.mail, color: Colors.grey),
+            activeIcon: Icon(Icons.place, color: Colors.grey),
             icon: new Icon(Icons.place, color: Color.primaryColor),
             title: new Text('Ngo',
                 style: TextStyle(
@@ -81,7 +82,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                         _currentIndex == 1 ? Colors.grey : Color.primaryColor)),
           ),
           BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person, color: Colors.grey),
+              activeIcon: Icon(Icons.add, color: Colors.grey),
               icon: Icon(Icons.add, color: Color.primaryColor),
               title: Text('Add',
                   style: TextStyle(
@@ -89,7 +90,7 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                           ? Colors.grey
                           : Color.primaryColor))),
           BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person, color: Colors.grey),
+              activeIcon: Icon(Icons.history, color: Colors.grey),
               icon: Icon(Icons.history, color: Color.primaryColor),
               title: Text('History',
                   style: TextStyle(
