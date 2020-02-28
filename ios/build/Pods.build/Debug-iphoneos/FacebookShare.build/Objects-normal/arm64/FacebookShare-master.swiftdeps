@@ -1,6 +1,0 @@
-version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
-options: "8ed2733c91873aaec9047e9d22b70011"
-build_time: [1582806529, 791237000]
-inputs:
-  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookShare/Sources/Share/Enums+Extensions.swift": [1582806396, 639719070]
-  "/Users/jasleenkaur/Sites/projects/flutter_food_donation/ios/Pods/FacebookShare/Sources/Share/FBSDKShareKit+Typealiases.swift": [1582806396, 640262516]
