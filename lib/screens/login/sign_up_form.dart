@@ -3,6 +3,7 @@ import 'package:flutter_food_donation/components/bottom_tab_navigator.dart';
 import './sign_up_icons.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
 import '../../utils/colors/colors.dart';
+import '../../utils/constants/images.dart';
 
 class TextEntriesForm extends StatefulWidget {
   @override
@@ -57,8 +58,19 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
 
         @override
         Widget build(BuildContext context) {
-          return ListView(
-            children:<Widget>[Form(
+          return Scaffold(
+            body:Container(
+              decoration: BoxDecoration(
+              color: Colors.transparent.withOpacity(1),
+              image: DecorationImage(
+                image:BACKGROUND,
+                fit: BoxFit.cover,
+              ),
+            ),
+              padding:EdgeInsets.all(30.0),
+              child: ListView(
+            children:<Widget>[
+            Form(
             key: _formKey,
             autovalidate: _autoValidate,
             child:Column(
@@ -277,7 +289,8 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                   SizedBox(height:20.0),
                   SignUpIcons()
             ],     
-          ))]);
+          ))]) ),
+          );
         }
       
         String validateName(String value) {
@@ -312,9 +325,10 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
         }
       
         void callback(){
-          Navigator.pushReplacement(
+          Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => BottomTabNavigator()),
+                (_)=>false
                 );
         }
         

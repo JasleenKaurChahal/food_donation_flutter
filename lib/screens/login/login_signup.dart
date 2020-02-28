@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_donation/screens/login/sign_up_form.dart';
 import './login_page_form.dart';
 import './sign.dart';
 import '../../utils/colors/colors.dart';
@@ -18,14 +19,6 @@ class _LoginSignUpState extends State<LoginSignUp> {
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(30.0),
             child: Container(
-              // decoration:BoxDecoration(
-              //   shape: BoxShape.rectangle,
-              //   border: Border.all(
-              //     color: Color.white,
-              //     // width: 2.0,
-              //     ),
-              //   borderRadius: BorderRadius.circular(12),
-              //   ),
               child:SafeArea(
                 child: Column(
                   children: <Widget>[
@@ -46,7 +39,8 @@ class _LoginSignUpState extends State<LoginSignUp> {
         body:TabBarView(
           children: <Widget>[
             LoginForm(),
-            Sign(),
+            //Sign(),
+            TextEntriesForm()
           ],
         )
       )
