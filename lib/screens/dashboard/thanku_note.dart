@@ -101,7 +101,7 @@ class ThankuNote extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 color: Color.primaryColor,
                 child: Text('Go To Home Screen',
-                    style: (TextStyle(fontSize: 20, color: Color.white))),
+                    style: (TextStyle(fontSize: 18, color: Color.white))),
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,

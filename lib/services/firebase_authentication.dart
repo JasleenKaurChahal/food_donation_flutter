@@ -60,24 +60,17 @@ class FirebaseAuthentication{
 
   static addDonations({String ngoName,String address,String date,String time,String foodItem,String quantity,Function callback}){
     try{
-      var id;
-      var a=Firestore.instance.collection('users').snapshots();
-      // print('a is ${a.uid}');
+      var documentId=Firestore.instance.collection("donations").document().documentID;
+    
       FirebaseAuth.instance
       .currentUser()
-      .then((currentUser)=>{
-        id=currentUser.uid
-      });
-      
-      FirebaseAuth.instance
-      .currentUser()
-      .then((result)=> {
+      .then((currentUser)=> {
       Firestore.instance
       .collection("donations")
-      .document(result.uid)
+      .document()
       .setData({
-        "donationId":result.uid,
-        "userId":id,
+        "donationId":documentId,
+        "userId":currentUser.uid,
         "ngoName":ngoName,
         "address":address,
         "date":date,
@@ -86,7 +79,7 @@ class FirebaseAuthentication{
         "quantity":quantity
       })
       .then((result)=>{
-        //callback()
+        callback()
       })});
 
     }catch(err){
