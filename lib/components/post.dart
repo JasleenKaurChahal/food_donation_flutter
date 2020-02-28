@@ -25,7 +25,7 @@ class Post extends StatelessWidget {
                     Consumer<PostProvider>(
                         builder: (context, postProvider, child) {
                       return Container(
-                        margin: EdgeInsets.fromLTRB(5, 5, 0, 5),
+                        margin: EdgeInsets.fromLTRB(10, 10, 0, 5),
                         height: 70.0,
                         width: 70.0,
                         decoration: BoxDecoration(
@@ -36,24 +36,26 @@ class Post extends StatelessWidget {
                                 image: postProvider.image, fit: BoxFit.fill)),
                       );
                     }),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(left: 15),
+                    // ),
                     Column(
                       children: <Widget>[
-                        Center(child: Consumer<PostProvider>(
-                            builder: (context, postProvider, child) {
-                          return Text(
-                            postProvider.name,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 18),
-                          );
-                        })),
-                        Center(
+                        Container(
+                            margin: EdgeInsets.only(left: 15),
+                            child: Consumer<PostProvider>(
+                                builder: (context, postProvider, child) {
+                              return Text(
+                                postProvider.name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500, fontSize: 18),
+                              );
+                            })),
+                        Container(
                             child: Text('Banglore',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w300,
-                                    fontSize: 15))),
+                                    fontSize: 16))),
                       ],
                     ),
                   ],
@@ -61,7 +63,7 @@ class Post extends StatelessWidget {
                 Consumer<PostProvider>(builder: (context, postProvider, child) {
                   return Positioned(
                     right: 10,
-                    top: 10,
+                    top: 20,
                     child: Icon(
                       Icons.people,
                       color: Color.primaryColor,

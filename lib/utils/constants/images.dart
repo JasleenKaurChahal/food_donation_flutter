@@ -28,3 +28,4 @@ const APP_LOGO = AssetImage('assets/images/logo.png');
 const DASHBOARD_COVER = AssetImage(
   'assets/images/dashboard.jpg',
 );
+const SPLASH_SCREEN = AssetImage('assets/images/splash.jpg');

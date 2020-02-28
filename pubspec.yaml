@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_facebook_auth: ^0.1.1
   firebase_auth: ^0.15.4
+  animated_splash: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/images/image3.jpg
     - assets/images/image4.jpg
     - assets/images/image5.jpg
+    - assets/images/splash.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
