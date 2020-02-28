@@ -8,6 +8,7 @@ import 'package:flutter_food_donation/screens/login/login_signup.dart';
 import 'package:flutter_food_donation/screens/ngoList/ngo_list.dart';
 import 'package:flutter_food_donation/screens/userProfile/user_profile.dart';
 import 'package:flutter_food_donation/services/firebase_authentication.dart';
+import 'package:flutter_food_donation/utils/constants/images.dart';
 import '../utils/colors/colors.dart';
 import '../screens/history/history.dart';
 
@@ -19,7 +20,7 @@ class BottomTabNavigator extends StatefulWidget {
 class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   int _selectedIndex = 0;
   int _currentIndex = 0;
-  
+
   final List<Widget> _children = [
     Dashboard(),
     AllNgoList(),
@@ -28,18 +29,12 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
     UserProfile()
   ];
 
-  void callBack(){
-    Navigator.pushAndRemoveUntil(
-    context,
-    MaterialPageRoute(builder: (context) => LoginSignUp()),
-    (_)=>false
-    );
+  void callBack() {
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => LoginSignUp()), (_) => false);
   }
 
-  final List<Widget> _drawerTabs=[
-    AboutUs(),
-    ContactUs()
-  ];
+  final List<Widget> _drawerTabs = [AboutUs(), ContactUs()];
 
   void onTabTapped(int index) {
     setState(() {
@@ -50,11 +45,9 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
   _onSelectItem(int index) {
     setState(() {
       _selectedIndex = index;
-    });  
-    Navigator.push(
-      context, 
-      MaterialPageRoute(builder: (context) => _drawerTabs[_selectedIndex])
-    );
+    });
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => _drawerTabs[_selectedIndex]));
   }
 
   @override
@@ -131,10 +124,8 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
                       width: 100.0,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                  "https://png.pngtree.com/png-clipart/20190629/original/pngtree-vector-add-user-icon-png-image_4101420.jpg")))),
+                          image: DecorationImage(
+                              fit: BoxFit.fill, image: USER_IMAGE))),
                   SizedBox(width: 15.0),
                   Text('Welcome User!\nPlan your vacation',
                       textAlign: TextAlign.center,
@@ -157,7 +148,71 @@ class _BottomTabNavigatorState extends State<BottomTabNavigator> {
               leading: Icon(Icons.flip_to_back, color: Color.black),
               title: Text('Log out', style: TextStyle(color: Color.black)),
               onTap: () {
-                FirebaseAuthentication.logOutUsingUserByEmailPassword(callback:callBack);
+                showDialog(
+                    useRootNavigator: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Container(
+                          height: 250,
+                          width: 100,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Image(
+                                  image: NEED_FOOD,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 20),
+                              ),
+                              Text(
+                                'Are you sure you want to \nlogout?',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                            padding: EdgeInsets.all(10),
+                            color: Color.primaryColor,
+                            child: Text('Yes',
+                                style: (TextStyle(
+                                    fontSize: 20, color: Color.white))),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              FirebaseAuthentication
+                                  .logOutUsingUserByEmailPassword(
+                                      callback: callBack);
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 60),
+                          ),
+                          FlatButton(
+                            padding: EdgeInsets.all(10),
+                            color: Color.primaryColor,
+                            child: Text('No',
+                                style: (TextStyle(
+                                    fontSize: 20, color: Color.white))),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.pop(context);
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 20),
+                          ),
+                        ],
+                      );
+                    });
+                // FirebaseAuthentication.logOutUsingUserByEmailPassword();
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => DonationForm()),
+                // );
               }),
         ],
       )),

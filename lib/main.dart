@@ -6,6 +6,7 @@ import 'package:flutter_food_donation/providers/user_profile.dart';
 import 'package:flutter_food_donation/routes/routes.dart';
 import 'package:flutter_food_donation/screens/dashboard/donation_form.dart';
 import 'package:flutter_food_donation/screens/dashboard/timeline.dart';
+import 'package:flutter_food_donation/screens/splash_screen.dart';
 import 'components/bottom_tab_navigator.dart';
 import './utils/colors/colors.dart';
 import './screens/login/login_signup.dart';
@@ -37,9 +38,8 @@ class MyApp extends StatelessWidget {
           ),
           // onGenerateRoute: Router.generateRoute,
           //initialRoute: timelineRoute,
-         // home: BottomTabNavigator()
-          //home:Timeline()
-          home:LoginSignUp()
+          home: SplashScreen()
+          // home:LoginSignUp()
           // home: Scaffold(
           //     body: Container(
           //       decoration: BoxDecoration(
